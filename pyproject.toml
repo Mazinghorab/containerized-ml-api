@@ -1,0 +1,33 @@
+[project]
+name = "containerized-ml-api"
+version = "0.1.0"
+description = "ride duration model"
+readme = "README.md"
+authors = [
+    { name = "Mazinghorab", email = "mazenghorab55@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.163.0",
+    "litestar>=2.25.0",
+    "numpy>=2.5.4",
+    "pandas>=3.1.1",
+    "pytest>=9.2.0",
+]
+
+[project.scripts]
+containerized-ml-api = "containerized_ml_api:main"
+
+[project.optional-dependencies]
+onnx = [
+    "torch>=2.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
