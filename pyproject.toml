@@ -9,19 +9,20 @@ authors = [
 requires-python = ">=3.13"
 dependencies = [
     "fastapi>=0.163.0",
+    "fastapi-users>=15.0.5",
     "litestar>=2.25.0",
     "numpy>=2.5.4",
     "pandas>=3.1.1",
     "pytest>=9.2.0",
+    "typing>=3.10.0.0",
+    "uvicorn>=0.54.0",
 ]
 
 [project.scripts]
 containerized-ml-api = "containerized_ml_api:main"
 
-[project.optional-dependencies]
-onnx = [
-    "torch>=2.2",
-]
+[tool.pytest.ini_options]
+pythonpath = ["src"]
 
 [build-system]
 requires = ["uv_build>=0.13.8,<0.14.0"]
